@@ -17,6 +17,12 @@ try {
     }
 
     if ($_GET["action"] === "addList" && $_SERVER["REQUEST_METHOD"] === "POST") {
+        $list = $data["list"];
+        $stmt = $conn->prepare("INSERT INTO english (list) VALUES (:list)");
+        $stmt->bindParam(":list", $list);
+        $stmt->execute();
+        http_response_code(201);
+        echo json_encode(["success: ", true]);
     }
 
     if ($_GET["action"] === "editList" && $_SERVER["REQUEST_METHOD"] === "PUT") {
