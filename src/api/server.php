@@ -37,6 +37,11 @@ try {
     }
 
     if ($_GET["action"] === "deleteList" && $_SERVER["REQUEST_METHOD"] === "DELETE") {
+        $id = $data["id"];
+        $stmt = $conn->prepare("DELETE FROM english WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        http_response_code(response_code: 204);
     }
 } catch (PDOException $e) {
     echo json_encode(["error" => $e->getMessage()]);
