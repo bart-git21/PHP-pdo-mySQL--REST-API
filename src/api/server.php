@@ -26,6 +26,14 @@ try {
     }
 
     if ($_GET["action"] === "editList" && $_SERVER["REQUEST_METHOD"] === "PUT") {
+        $id = $data["id"];
+        $list = $data["list"];
+        $stmt = $conn->prepare("UPDATE english SET list = :list WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":list", $list);
+        $stmt->execute();
+        http_response_code(200);
+        echo json_encode(["success: ", true]);
     }
 
     if ($_GET["action"] === "deleteList" && $_SERVER["REQUEST_METHOD"] === "DELETE") {
