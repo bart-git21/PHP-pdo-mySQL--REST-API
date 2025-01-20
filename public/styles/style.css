@@ -1,0 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.tab-content {
+    height: max(400px , 30vh);
+}
