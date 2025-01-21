@@ -32,6 +32,23 @@ $(document).ready(function () {
       .fail(() => {})
       .always(() => {});
   });
-  $("#saveList").on("click", function () {});
+  $("#saveList").on("click", function () {
+    const id = $("#getList").val();
+    const textareaValue = $("#textarea").val();
+    $.ajax({
+      url: "../src/api/server.php?action=editList",
+      method: "PUT",
+      contentType: "application/json",
+      headers: {
+        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+      },
+      data: JSON.stringify({ id, textareaValue }),
+    })
+      .done((response) => {
+        console.log(response);
+      })
+      .fail((xhr, status, error) => {console.log(error)})
+      .always(() => {});
+  });
   $("#deleteList").on("click", function () {});
 });
