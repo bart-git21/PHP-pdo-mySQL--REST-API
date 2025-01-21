@@ -2,14 +2,14 @@
 header("Content-Type: application/json");
 
 try {
-    include "./../config/db.php";
+    include "../config/db.php";
 
     $json = file_get_contents("php://input");
     $data = json_decode($json, true);
 
     if ($_GET["action"] === "getList" && $_SERVER["REQUEST_METHOD"] === "GET") {
         $stmt = $conn->prepare("SELECT list FROM english WHERE id = :id");
-        $stmt->bindParam(":id", $data["id"]);
+        $stmt->bindParam(":id", $_GET["id"]);
         $stmt->execute();
         $list = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -22,7 +22,7 @@ try {
         $stmt->bindParam(":list", $list);
         $stmt->execute();
         http_response_code(201);
-        echo json_encode(["success: ", true]);
+        echo json_encode(["success: "=> true]);
     }
 
     if ($_GET["action"] === "editList" && $_SERVER["REQUEST_METHOD"] === "PUT") {
@@ -33,7 +33,7 @@ try {
         $stmt->bindParam(":list", $list);
         $stmt->execute();
         http_response_code(200);
-        echo json_encode(["success: ", true]);
+        echo json_encode(["success: "=> true]);
     }
 
     if ($_GET["action"] === "deleteList" && $_SERVER["REQUEST_METHOD"] === "DELETE") {
