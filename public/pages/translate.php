@@ -1,17 +1,17 @@
 <div class="card text-center h-100">
-    <div class="card-header">
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-success">Start</button>
-            <button type="button" class="btn btn-primary">Continue</button>
+    <div class="card-header d-flex justify-content-between">
+        <div class="btn-group d-inline-block" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-success">Start (spacebar)</button>
+            <button type="button" class="btn btn-primary">Continue (right arrow)</button>
             <button type="button" class="btn btn-danger">Stop</button>
         </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <div class="card-body d-flex flex-column">
+        <h3 class="card-title flex-fill" id="translate_question">Special title treatment</h3>
+        <div class="card-text" id="translate_answer"></div>
     </div>
     <div class="card-footer text-body-secondary">
-        <div class="text-light">
+        <div class="">
             <h4>Keyboard buttons control:</h4>
             <div>
                 <i class="fa-solid fa-square-caret-left"></i> - return
