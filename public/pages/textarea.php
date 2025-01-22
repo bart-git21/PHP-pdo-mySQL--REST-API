@@ -5,9 +5,17 @@
     <h6 class="flex-fill w-100">Get the list:</h6>
     <select class="form-select" aria-label="Default select example" id="getList">
         <option selected>Retrieve the list with the ID</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <?php
+        include "../src/config/db.php";
+        $stmt = $conn->prepare("SELECT * FROM english");
+        $stmt->execute();
+        $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo count($array);
+        foreach ($array as $elem):
+            $id= $elem['id'];
+            echo "<option value='$id'>$id</option>";
+        endforeach;
+        ?>
     </select>
 </div>
 <div class="btn-group" role="group" aria-label="Basic outlined example">
