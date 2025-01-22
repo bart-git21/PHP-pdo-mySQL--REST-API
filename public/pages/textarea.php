@@ -17,7 +17,4 @@
     <button type="button" class="btn btn-outline-primary" id="createList">
         Create the new list
     </button>
-    <button type="button" class="btn btn-outline-primary" id="deleteList">
-        Delete this list
-    </button>
 </div>

@@ -50,5 +50,4 @@ $(document).ready(function () {
       .fail((xhr, status, error) => {console.log(error)})
       .always(() => {});
   });
-  $("#deleteList").on("click", function () {});
 });
