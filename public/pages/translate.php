@@ -20,6 +20,9 @@
         <div class="">
             <h4>Keyboard buttons control:</h4>
             <div>
+                [del] - delete the sentence
+            </div>
+            <div>
                 <i class="fa-solid fa-square-caret-left"></i> - return
                 last card
             </div>
