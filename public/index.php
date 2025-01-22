@@ -13,6 +13,9 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <!-- css -->
     <link rel="stylesheet" href="./styles/style.css" />
     <!-- script -->
@@ -67,8 +70,8 @@
                         aria-labelledby="translate-tab" tabindex="0">
                         <?php include "pages/translate.php"; ?>
                     </div>
-                    <div class="tab-pane fade h-100" id="dragdrop-tab-pane" role="tabpanel" aria-labelledby="dragdrop-tab"
-                        tabindex="0">
+                    <div class="tab-pane fade h-100" id="dragdrop-tab-pane" role="tabpanel"
+                        aria-labelledby="dragdrop-tab" tabindex="0">
                         <?php include "pages/dragdrop.php"; ?>
                     </div>
                     <div class="tab-pane fade h-100" id="writing-tab-pane" role="tabpanel" aria-labelledby="writing-tab"
