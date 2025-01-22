@@ -1,9 +1,9 @@
 <div class="card text-center h-100">
     <div class="card-header d-flex justify-content-between">
         <div class="btn-group d-inline-block" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-success">Start (spacebar)</button>
-            <button type="button" class="btn btn-primary">Continue (right arrow)</button>
-            <button type="button" class="btn btn-danger">Stop</button>
+            <button type="button" class="btn btn-success" id="translate_start">Start (spacebar)</button>
+            <button type="button" class="btn btn-primary" id="translate_continue">Continue (right arrow)</button>
+            <button type="button" class="btn btn-danger" id="translate_stop">Stop</button>
         </div>
         <input title="timer" type="email" class="form-control d-inline-block p-0 w-auto" id="translate_delay"
             placeholder="delay" value="10">
