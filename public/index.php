@@ -63,15 +63,15 @@
             <div class="col-md-9">
                 <div class="tab-content" id="myTabContent">
                     <!-- game tabs -->
-                    <div class="tab-pane fade show active" id="translate-tab-pane" role="tabpanel"
+                    <div class="tab-pane fade show active h-100" id="translate-tab-pane" role="tabpanel"
                         aria-labelledby="translate-tab" tabindex="0">
                         <?php include "pages/translate.php"; ?>
                     </div>
-                    <div class="tab-pane fade" id="dragdrop-tab-pane" role="tabpanel" aria-labelledby="dragdrop-tab"
+                    <div class="tab-pane fade h-100" id="dragdrop-tab-pane" role="tabpanel" aria-labelledby="dragdrop-tab"
                         tabindex="0">
                         <?php include "pages/dragdrop.php"; ?>
                     </div>
-                    <div class="tab-pane fade" id="writing-tab-pane" role="tabpanel" aria-labelledby="writing-tab"
+                    <div class="tab-pane fade h-100" id="writing-tab-pane" role="tabpanel" aria-labelledby="writing-tab"
                         tabindex="0">
                         <?php include "pages/writing.php"; ?>
                     </div>

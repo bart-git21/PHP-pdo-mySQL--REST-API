@@ -1,4 +1,4 @@
-<div class="card text-center">
+<div class="card text-center h-100">
     <div class="card-header">
         <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-success">Start</button>
