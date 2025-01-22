@@ -45,7 +45,7 @@ $(document).ready(function () {
       data: JSON.stringify({ id, textareaValue }),
     })
       .done((response) => {
-        console.log(response);
+        alert("List updated successfully");
       })
       .fail((xhr, status, error) => {console.log(error)})
       .always(() => {});
