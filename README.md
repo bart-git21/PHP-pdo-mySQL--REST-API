@@ -1,6 +1,6 @@
-﻿# The [PHP](https://www.php.net/) and MySQL application
+﻿# The [PHP](https://www.php.net/) and MySQL REST Api application
 
 ### Description:
 ```
-The application
+API for http requests to english MySQL database
 ```
