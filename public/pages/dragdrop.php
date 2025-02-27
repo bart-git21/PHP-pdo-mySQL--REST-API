@@ -1,1 +1,0 @@
-Drag'drop game will be there. Please, await
