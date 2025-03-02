@@ -39,6 +39,14 @@ $ npm run start
 
 # API Endpoints
 
+## GET /
+200 
+{
+    "code": 200,
+    "result": array,
+    "descripttion": "get all lists",
+}
+
 ## Common Http status codes
 |Http code|body                 |Description                                |
 |---------|---------------------|-------------------------------------------|
