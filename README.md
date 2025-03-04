@@ -33,9 +33,6 @@ Open your browser and navigate to the client side
 
 ### Base URL
 http://localhost/
-```
-$ npm run start
-```
 
 # API Endpoints
 
