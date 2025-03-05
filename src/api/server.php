@@ -7,6 +7,15 @@ try {
     include "../config/db.php";
     $json = file_get_contents("php://input");
     $json && $data = json_decode($json, true);
+
+    switch($requestUri) {
+        case '/':
+            switch ($requestMethod)
+        default: 
+            http_response_code(400);
+            echo json_encode(["error"=>"Error 404! No route found!"]);
+            break;
+    }
     
 } catch (PDOException $e) {
     echo json_encode(["error" => $e->getMessage()]);
