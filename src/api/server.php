@@ -11,6 +11,8 @@ try {
     switch($requestUri) {
         case '/':
             switch ($requestMethod)
+        case preg_match('/\d+/', $requestUri, $matches) ? true : false:
+            $id = $matches[0];
         default: 
             http_response_code(400);
             echo json_encode(["error"=>"Error 404! No route found!"]);
