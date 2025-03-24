@@ -1,4 +1,4 @@
-﻿# This is the base php REST API.
+# This is the base php REST API.
 
 # Project Overview:
 The web-based single page application using PHP server.
@@ -52,131 +52,13 @@ http://localhost/api/
 
 # API Endpoints
 
-## Authentication:
-
-### POST /auth
-### Sign in, log in
-| Server response                               | Client request                               |
-|-----------------------------------------------|----------------------------------------------|
-|                                               | AT = fetch("/auth", body);                   |
-| RTs.push();                                   |                                              |
-| res.cookie(RT);                               |                                              |
-| res.json(AT);                                 |                                              |
-|                                               | localStorage.setItem(AT);                    |
-
-400 user not found
+### GET /api/english/
+### get all english table lists
 {
     "code": 400,
     "message": "User not found",
     "descripttion": "User not found",
 }
-
-### GET /auth
-#### get new refresh token
-| Server                                        | Client                                       |
-|-----------------------------------------------|----------------------------------------------|
-|                                               | AT = fetch("/auth", {credentials}) |
-| RTs.includes(RT)                              |                                              |
-| jwt.verify(req.cookie.RT, SECRET);            |                                              |
-| res.json(AT);                                 |                                              |
-|                                               | localStorage.setItem(AT);                    |
-
-200 OK
-401 refresh token not found or invaled
-{
-    "code": 401,
-    "message": "Refresh token is not found. You need to sign in",
-    "descripttion": "Refresh token not found",
-}
-403 refresh token is expired
-{
-    "code": 401,
-    "message": "Refresh token is not found. You need to sign in",
-    "descripttion": "Refresh token not found",
-}
-### DELETE /auth
-#### log out
-| Server                                        | Client                                       |
-|-----------------------------------------------|----------------------------------------------|
-|                                               |  fetch("/auth", {credentials})     |
-| RTs = RTs.filter(e => e !== req.cookie.RT);   |                                              |
-| res.clearCookie(RT);                          |                                              |
-|                                               | localStorage.removeItem(AT)                  |
-
-204 OK
-
-## Users:
-
-### POST /users
-#### create the new user, sign up
-| Server                                        | Client                                       |
-|-----------------------------------------------|----------------------------------------------|
-|                                               |  fetch("/users")                             |
-| AT = req.headers.authorization.split(" ")[1]; |                                              |
-| jwt.verify(AT, SECRET);                       |                                              |
-
-201 OK
-400 user is exists
-{
-    "code": 400,
-    "message": "The name/email is already taken",
-    "descripttion": "User already exists",
-}
-422 data is empty or invalid
-{
-    "code": 422,
-    "message": "Data is empty or invalid",
-    "descripttion": "User data is empty or invalid",
-}
-
-### GET /users
-#### get protected data
-| Server                                        | Client                                       |
-|-----------------------------------------------|----------------------------------------------|
-|                                               |  fetch("/users", {Authorization})            |
-| AT = req.headers.authorization.split(" ")[1]; |                                              |
-| jwt.verify(AT, SECRET);                       |                                              |
-
-200 OK
-{
-    "id": 1,
-    "name": "John Doe",
-}
-401 Access token not found
-{
-    "code": 404,
-    "message": "Unauthorized",
-    "descripttion": "Access token not found",
-}
-403 Access token is invalid
-{
-    "code": 404,
-    "message": "Access token is invalid",
-    "descripttion": "Access token is invalid",
-}
-404 Not found
-{
-    "code": 404,
-    "message": "Not found",
-    "descripttion": "Data not found",
-}
-
-### GET /admin
-#### example of page with admin permissions
-| Server                                        | Client                                       |
-|-----------------------------------------------|----------------------------------------------|
-|                                               |  fetch("/admin", {Authorization})            |
-| AT = req.headers.authorization.split(" ")[1]; |                                              |
-| jwt.verify(AT, SECRET);                       |                                              |
-| user.role = "admin";                          |                                              |
-### GET /moderator
-#### example of page with admin or moderator permissions
-| Server                                        | Client                                       |
-|-----------------------------------------------|----------------------------------------------|
-|                                               |  fetch("/moderator", {Authorization})        |
-| AT = req.headers.authorization.split(" ")[1]; |                                              |
-| jwt.verify(AT, SECRET);                       |                                              |
-| user.role = "admin" or "moderator";           |                                              |
 
 ## Common Http status codes
 |Http code|body                 |Description                                |
