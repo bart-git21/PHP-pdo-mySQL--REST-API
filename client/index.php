@@ -26,19 +26,26 @@
     <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="eng-tab" data-bs-toggle="tab" data-bs-target="#eng-tab-pane"
+                <button class="nav-link" id="eng-tab" data-bs-toggle="tab" data-bs-target="#eng-tab-pane"
                     type="button" role="tab" aria-controls="eng-tab-pane" aria-selected="true">English</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="task-tab" data-bs-toggle="tab" data-bs-target="#task-tab-pane"
                     type="button" role="tab" aria-controls="task-tab-pane" aria-selected="false">Tasks</button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="user-tab" data-bs-toggle="tab" data-bs-target="#user-tab-pane"
+                    type="button" role="tab" aria-controls="user-tab-pane" aria-selected="false">Users</button>
+            </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="eng-tab-pane" role="tabpanel" aria-labelledby="eng-tab"
+            <div class="tab-pane fade" id="eng-tab-pane" role="tabpanel" aria-labelledby="eng-tab"
                 tabindex="0"><?php include "pages/english.php" ?></div>
             <div class="tab-pane fade" id="task-tab-pane" role="tabpanel" aria-labelledby="task-tab" tabindex="0">
                 <?php include "pages/task.php" ?>
+            </div>
+            <div class="tab-pane fade show active" id="user-tab-pane" role="tabpanel" aria-labelledby="user-tab" tabindex="0">
+                <?php include "pages/user.php" ?>
             </div>
         </div>
     </div>
